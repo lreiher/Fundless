@@ -819,7 +819,7 @@ class PortfolioAnalytics:
             performance_df,
             x=performance_df.index,
             y=y,
-            line_shape="spline",
+            line_shape="linear",
             color_discrete_sequence=color,
         )
 
@@ -866,7 +866,7 @@ class PortfolioAnalytics:
             performance_df,
             x=performance_df.index,
             y="performance",
-            line_shape="spline",
+            line_shape="linear",
             color_discrete_sequence=["green"],
         )
         fig.update_layout(
@@ -881,7 +881,7 @@ class PortfolioAnalytics:
         fig.add_scatter(
             x=performance_df.index,
             y=performance_df.performance.where(performance_df.performance < 0),
-            line={"color": "red", "shape": "spline"},
+            line={"color": "red", "shape": "linear"},
         )
         fig.update_xaxes(showgrid=False, title_text="", zeroline=True, fixedrange=True)
         fig.update_yaxes(
